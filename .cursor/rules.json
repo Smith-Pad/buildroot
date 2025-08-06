@@ -1,0 +1,110 @@
+{
+  "codingStandards": {
+    "c": {
+      "indent": 2,
+      "maxLineLength": 80,
+      "braces": "same-line",
+      "naming": {
+        "functions": "snake_case",
+        "variables": "snake_case",
+        "constants": "UPPER_SNAKE_CASE",
+        "macros": "UPPER_SNAKE_CASE"
+      }
+    },
+    "makefile": {
+      "indent": 1,
+      "useTabs": true,
+      "maxLineLength": 80
+    },
+    "shell": {
+      "indent": 2,
+      "maxLineLength": 80,
+      "shebang": "#!/bin/bash"
+    }
+  },
+  "templates": {
+    "package.mk": {
+      "description": "Buildroot package makefile template",
+      "content": [
+        "################################################################################",
+        "#",
+        "# PACKAGE_NAME",
+        "#",
+        "################################################################################",
+        "",
+        "PACKAGE_NAME_VERSION = 1.0.0",
+        "PACKAGE_NAME_SOURCE = package-name-$(PACKAGE_NAME_VERSION).tar.gz",
+        "PACKAGE_NAME_SITE = https://example.com/downloads",
+        "PACKAGE_NAME_LICENSE = MIT",
+        "PACKAGE_NAME_LICENSE_FILES = LICENSE",
+        "",
+        "define PACKAGE_NAME_BUILD_CMDS",
+        "\t$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)",
+        "endef",
+        "",
+        "define PACKAGE_NAME_INSTALL_TARGET_CMDS",
+        "\t$(MAKE) DESTDIR=$(TARGET_DIR) install -C $(@D)",
+        "endef",
+        "",
+        "$(eval $(generic-package))"
+      ]
+    },
+    "Config.in": {
+      "description": "Buildroot package Config.in template",
+      "content": [
+        "config BR2_PACKAGE_PACKAGE_NAME",
+        "\tbool \"package-name\"",
+        "\thelp",
+        "\t\t  Package description here.",
+        "\t\t  ",
+        "\t\t  https://example.com/package-name"
+      ]
+    },
+    "patch": {
+      "description": "Patch file template",
+      "content": [
+        "From: Your Name <your.email@example.com>",
+        "Date: $(date)",
+        "Subject: [PATCH] Brief description of the patch",
+        "",
+        "---",
+        " file.c | 2 +-",
+        " 1 file changed, 1 insertion(+), 1 deletion(-)",
+        "",
+        "diff --git a/file.c b/file.c",
+        "index 1234567..abcdefg 100644",
+        "--- a/file.c",
+        "+++ b/file.c",
+        "@@ -1,3 +1,3 @@",
+        " // Original line",
+        "-old line",
+        "+new line",
+        " // Another line",
+        "--",
+        "2.25.1"
+      ]
+    }
+  },
+  "linting": {
+    "shell": {
+      "shellcheck": {
+        "severity": "style",
+        "exclude": ["SC2034", "SC2086"]
+      }
+    },
+    "makefile": {
+      "checkmake": {
+        "enabled": true
+      }
+    }
+  },
+  "filePatterns": {
+    "package/*/*.mk": "Buildroot package makefile",
+    "package/*/Config.in": "Buildroot package config",
+    "package/*/*.patch": "Patch file",
+    "package/*/*.hash": "Hash file",
+    "configs/*.defconfig": "Board configuration",
+    "board/*/": "Board-specific files",
+    "support/": "Build support files"
+  }
+}

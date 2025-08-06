@@ -1,0 +1,43 @@
+{
+  "name": "smith-pad-buildroot",
+  "description": "Buildroot-based embedded Linux system for Smith-Pad device",
+  "type": "embedded-linux",
+  "languages": [
+    "c",
+    "cpp",
+    "makefile",
+    "shell",
+    "python",
+    "perl"
+  ],
+  "frameworks": [
+    "buildroot",
+    "linux-kernel",
+    "u-boot"
+  ],
+  "buildSystem": {
+    "type": "buildroot",
+    "configFile": "Config.in",
+    "makefile": "Makefile"
+  },
+  "keyDirectories": {
+    "configs": "Board configurations",
+    "package": "Package definitions",
+    "board": "Board-specific files",
+    "support": "Build support files",
+    "docs": "Documentation"
+  },
+  "ignorePatterns": [
+    "build/",
+    "output/",
+    "package/*/",
+    "configs/*.defconfig"
+  ],
+  "fileAssociations": {
+    "*.mk": "makefile",
+    "*.in": "text",
+    "*.hash": "text",
+    "*.patch": "diff",
+    "*.defconfig": "text"
+  }
+}

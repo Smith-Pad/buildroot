@@ -1,0 +1,46 @@
+{
+  "editor": {
+    "formatOnSave": true,
+    "tabSize": 2,
+    "insertSpaces": true,
+    "rulers": [80, 100],
+    "wordWrap": "bounded"
+  },
+  "files": {
+    "exclude": {
+      "**/build/**": true,
+      "**/out/**": true,
+      "**/package/**": true,
+      "**/configs/**": true,
+      "**/*.log": true,
+      "**/*.o": true,
+      "**/*.so": true,
+      "**/*.a": true
+    },
+    "associations": {
+      "*.mk": "makefile",
+      "*.in": "text",
+      "*.hash": "text",
+      "*.patch": "diff"
+    }
+  },
+  "search": {
+    "exclude": {
+      "**/build/**": true,
+      "**/out/**": true,
+      "**/package/**": true,
+      "**/configs/**": true
+    }
+  },
+  "terminal": {
+    "integrated": {
+      "shell": {
+        "linux": "/usr/bin/bash"
+      }
+    }
+  },
+  "workbench": {
+    "colorTheme": "Default Dark+",
+    "iconTheme": "vs-seti"
+  }
+}
