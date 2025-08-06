@@ -1,0 +1,26 @@
+# Ignore build artifacts and output
+build/
+out/
+*.log
+
+# Ignore version control
+.git/
+.gitignore
+
+# Ignore dependency and package folders
+node_modules/
+venv/
+*.egg-info/
+
+# Ignore editor and OS files
+*.swp
+*.swo
+.DS_Store
+
+# Ignore large subtrees (edit as needed)
+package/
+configs/
+
+# Ignore legacy or backup files
+*~
+*.bak
