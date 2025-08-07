@@ -1,0 +1,7 @@
+compiling-boards.txt
+
+Written by Smith-Pad
+
+In this section, we are going to be talking about how to compile the boards
+on buildroot
+
