@@ -5,3 +5,7 @@ Written by Smith-Pad
 In this section, we are going to be talking about how to compile the boards
 on buildroot
 
+
+In the root directory of buildroot, you will see the `configs` folder.
+
+Use that to see all the `configs` to make for a particular board.
