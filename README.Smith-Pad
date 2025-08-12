@@ -2,3 +2,9 @@ Smith-Pad buildroot repository
 
 This is the forked repository of buildroot specifically
 for Smith-Pad Components
+
+
+
+Compiling Buildroot based on the boards.
+
+- make qemu_x86_64_defconfig
