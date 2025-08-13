@@ -5,6 +5,15 @@ for Smith-Pad Components
 
 
 
+Generating Packages
+--------------------
+
+In this section, we are going to be talking about how to generate
+packages in Smith-Pad buildroot. Using the scripts provided here,
+this allows you to generate package configs to build packages,
+which will be discussed later on
+
+
 Compiling Buildroot based on the boards.
 
 - make qemu_x86_64_defconfig
